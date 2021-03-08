@@ -22,7 +22,7 @@ This core machine learning method used relies on BERT, a language/word embedding
 
 ## Architecture Diagram
 
-[Image: image.png]
+![Image](doc/image_1.png)
 
 As you can see, there are three sections. 
 
@@ -35,7 +35,8 @@ As you can see, there are three sections.
 ## Contents
 
 The content of the workshop is as follows:
-[Image: image.png]
+
+![Image](doc/image_2.png)
 
 
 ## Workshop Requirements
@@ -52,26 +53,26 @@ To run this workshop, you will need to first deploy the CloudFormation Template
 * Open AWS Console
 * Select "CloudFormation" from the list of services
 * Select “Stacks” from the sidebar
-    * [Image: image.png]
+    * ![Image](doc/image_3.png)
 * Select "Create stack" and choose "With new resources (standard)"
-    * [Image: image.png]
+    * ![Image](doc/image_4.png)
 * Step 1: Specify template
     * Under the Prepare template section select "Template is ready"
     * Then under the Specify template section select "Upload a template file"
     * Click the "Choose file" button and upload your cloudformation template
     * Then select "Next"
-    * [Image: image.png]
+    * ![Image](doc/image_5.png)
 * Step 2: Specify Stack Details
     * Enter Medical-Text-Analysis as the "Stack name" and as the "EnvironmentName"
     * Click "Next"
-    * [Image: image.png]
+    * ![Image](doc/image_6.png)
 * Step 3: Configure Stack Options
     * Optional: Add any tags that you want to be applied to the resources in your stack
     * Leave everything else as default and select "Next"
 * Step 4: Review 
     * Review over all of the information and at the bottom of the page select the checkbox to acknowledge that this cloudformation template will be creating an IAM resource.
     * Then select "Create Stack"
-    * [Image: image.png]
+    * ![Image](doc/image_7.png)
 
 
 
@@ -80,34 +81,39 @@ To run this workshop, you will need to first deploy the CloudFormation Template
 * Once the cloudformation template has finished deploying all of the resources, open SageMaker from the main [AWS console](https://console.aws.amazon.com/) 
 * We will be using SageMaker Studio for this workshop. Here’s the [list of regions](https://docs.aws.amazon.com/sagemaker/latest/dg/regions-quotas.html) that SageMaker Studio is available in.
 * Go to SageMaker Studio by selecting the tab on the side bar
-    * [Image: image.png]
+    * ![Image](doc/image_8.png)
 * If this is your first time using the SageMaker Studio console, you will need to first set it up. 
     * Choose the “Quick start" option
     * Set the “User name” to “Medical-Text-Analysis-User” (or any other user name will do!)
     * For the Execution role, select the IAM role that was created when the CloudFormation template was deployed. This will look something like “Medical-Text-Analysis-Sentence-RelevanceRole-XXXXXXXXXXXXX”
     * Select Submit
-    * [Image: image.png]
+    * ![Image](doc/image_9.png)
 * If this is not your first time using SageMaker Studio, go ahead and just create a new user 
     * Select “Add User”
-    * [Image: image.png]
+    * ![Image](doc/image_10.png)
     * Select “Quick Start”
     * Set the “User name” to “Medical-Text-Analysis-User” (or any other user name will do!)
     * For the Execution role, select the IAM role that was created when the CloudFormation template was deployed. This will look something like “Medical-Text-Analysis-Sentence-RelevanceRole-XXXXXXXXXXXXX”
     * Select Submit
-    * [Image: image.png]
+    * ![Image](doc/image_11.png)
 * You will then be prompted to choose a VPC and Subnet you would like to use for SageMaker Studio. Select `sentence_relevance_VPC`. There is only one subnet in that VPC; select it.
 * Once you choose your VPC and Subnet, you will then be brought to the Amazon SageMaker Studio Control Panel where you will see a bar at the top explaining that it is “Preparing Amazon SageMaker Studio”. This will take a few minutes to create.
 * Once SageMaker studio is ready (this will take about 5 minutes), find your Username and select “Open Studio”
-    * [Image: image.png]
-* Once the studio opens, clone this repo into the SageMaker Studio console with `git clone <URL> (note: you can also download this repository manually and upload it to SageMaker Studio).
+    * ![Image](doc/image_12.png)
+* Once the studio opens, clone this repo into the SageMaker Studio console from the terminal by entering:
+
+ `git clone https://github.com/aws-samples/medical-text-sentence-relevance-bert.git` 
+
+(note: you can also download this repository manually and upload it to SageMaker Studio).
+
 * Click on the directory `Medical_Text_Analysis_Resources`, then  `docker_containers`  and finally the folder `model_container”`and double click on “nlp_bert_medical_workshop.ipynb” to open the notebook
-    * [Image: image.png]
+    * ![Image](doc/image_13.png)
 * Choose Python 3 (Data Science) as your preferred kernel 
     * NOTE: This might take a few minutes to start up
-    * [Image: image.png]
+    * ![Image](doc/image_14.png)
 
 * In the top right of the notebook click on “Unknown” and set to ml.m5.large
-    * [Image: image.png]
+    * * ![Image](doc/image_15.png)
 
 The rest of the instructions for deploying the solution in a step-by-step manner are in the notebook `nlp_bert_medical_workshop.ipynb.` Open up that notebook and get to work!
 
