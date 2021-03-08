@@ -1,0 +1,1 @@
+curl --data "@a_file.txt" -X POST -v http://localhost:8081/invocations -H "Content-Type: application/json"
