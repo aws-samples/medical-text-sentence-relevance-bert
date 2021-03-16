@@ -5,7 +5,8 @@
 
 In many different applications, it can be useful to determine whether a particular statement is accurately reflected in a larger corresponding document. Throughout this blog post, we will be considering the benefits of this type of application within the medical field. Often times, doctors are tasked with writing a quick summary statement that will summarize their patient’s entire visit. Later on, if that patient revisits the doctor or transfers to a new doctor, then those summary statements will be reviewed by their new doctor in order to get a better understanding of the patient’s medical history. That being said, the accuracy of these summary statements can have direct impact on the patient’s treatment in the future. This application will provide a way to check that the summary statement is an accurate representation of the information from the corresponding document (aka the full details from the patient visit). 
 
-Example: If the summary statement is “The patient is healthy” and the supporting documentation is “The patient’s health is good. The patient does not have a fever. The patient is a 28 year old female.” the most accurate summary statement would be “The patient’s health is good.” 
+Example
+If the summary statement is “The patient is healthy” and the supporting documentation is “The patient’s health is good. The patient does not have a fever. The patient is a 28 year old female.” the most accurate summary statement would be “The patient’s health is good.” 
 
 Note: From this point forward, we will be referring to the summary statement as a "restatement" to avoid any confusion with the corresponding document that summarizes the patient visit. That being said, the restatement may be a summary statement of the document, a high level description, an exact quote from the document, or bear some other relationship to the document. 
 
@@ -47,11 +48,9 @@ You will also need to have permission to use [AWS CloudFormation](https://aws.am
 
 ## Steps for deploying CloudFormation Template
 
-To run this workshop, you will need to first deploy the CloudFormation Template.
+To run this workshop, you will need to first deploy the CloudFormation Template
 
-* Download the CloudFormation Template from this repository. The file is called `cloudformation_template.yaml`
-
-* Open the AWS Console
+* Open AWS Console
 * Select "CloudFormation" from the list of services
 * Select “Stacks” from the sidebar
     * ![Image](doc/image_3.png)
@@ -84,7 +83,7 @@ To run this workshop, you will need to first deploy the CloudFormation Template.
 * Go to SageMaker Studio by selecting the tab on the side bar
     * ![Image](doc/image_8.png)
 * If this is your first time using the SageMaker Studio console, you will need to first set it up. 
-    * Choose the "Quick start" option
+    * Choose the “Quick start" option
     * Set the “User name” to “Medical-Text-Analysis-User” (or any other user name will do!)
     * For the Execution role, select the IAM role that was created when the CloudFormation template was deployed. This will look something like “Medical-Text-Analysis-Sentence-RelevanceRole-XXXXXXXXXXXXX”
     * Select Submit
