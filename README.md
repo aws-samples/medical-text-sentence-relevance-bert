@@ -89,7 +89,8 @@ To run this workshop, you will need to first deploy the CloudFormation Template.
     * For the Execution role, select the IAM role that was created when the CloudFormation template was deployed. This will look something like “Medical-Text-Analysis-Sentence-RelevanceRole-XXXXXXXXXXXXX”
     * Select Submit
     * ![Image](doc/image_9.png)
-* If this is not your first time using SageMaker Studio, go ahead and just create a new user 
+* If this is **not** your first time using SageMaker Studio, go ahead and just create a new user. Note that for the workshop to work on a pre-existing SageMaker Studio Domain the role it uses must have the same permissions as those delineated to SageMaker Studio in `cloudformation_template.yaml`.
+
     * Select “Add User”
     * ![Image](doc/image_10.png)
     * Select “Quick Start”
