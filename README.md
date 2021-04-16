@@ -120,9 +120,18 @@ The rest of the instructions for deploying the solution in a step-by-step manner
 
 ## Cleaning Up
 
-When you've finished with this solution, make sure that you delete all unwanted AWS resources. AWS CloudFormation can be used to automatically delete all standard resources that have been created by the solution and notebook. From the ECS Clusters, manually de-deploy the deployed containers by clicking the running tasks and selecting `Stop`. Next, Go to the AWS CloudFormation Console, and delete the `Medical_Text_Analysis` stack. Note that if you try to delete the stack prior to stopping the ECS cluster will **not** be deleted.
+When you've finished with this solution, make sure that you delete all unwanted AWS resources. 
 
-**Caution**: You need to still delete other resources manually created. From the AWS SageMaker Console, you can [delete the SageMaker Studio domain you created](https://docs.aws.amazon.com/sagemaker/latest/dg/gs-studio-delete-domain.html). From the AWS ECR Console, you can manually delete the registered images.
+1. From the ECS Clusters, manually de-deploy the deployed containers by clicking the running tasks and selecting `Stop`.
+
+2. From the ECS Task Definition section; de-register the task definitions you created.
+
+3. From the AWS ECR Console, you can manually delete the registered images.
+
+4. From the AWS SageMaker Console,  [delete the SageMaker Studio user and domain you created](https://docs.aws.amazon.com/sagemaker/latest/dg/gs-studio-delete-domain.html).
+
+5. Finally, go to the AWS CloudFormation Console, and delete the `Medical_Text_Analysis` stack. Note that if you try to delete the stack prior deleting the manually created resources, those specific resource will **not** be deleted.
+
 
 ## Useful Resources
 
