@@ -1,4 +1,4 @@
-# Create a Medical Sentence Matching Application for Medical Transcriptions Using BERT
+# Deriving Relevant Sentences for Patient Summaries in Medical Transcriptions Using BERT
 
 
 ## Introduction
