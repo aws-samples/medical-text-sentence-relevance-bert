@@ -89,8 +89,7 @@ To run this workshop, you will need to first deploy the CloudFormation Template.
     * For the Execution role, select the IAM role that was created when the CloudFormation template was deployed. This will look something like “Medical-Text-Analysis-Sentence-RelevanceRole-XXXXXXXXXXXXX”
     * Select Submit
     * ![Image](doc/image_9.png)
-* If this is **not** your first time using SageMaker Studio, go ahead and just create a new user. Note that for the workshop to work on a pre-existing SageMaker Studio Domain the role it uses must have the same permissions as those delineated to SageMaker Studio in `cloudformation_template.yaml`.
-
+* If this is not your first time using SageMaker Studio, go ahead and just create a new user 
     * Select “Add User”
     * ![Image](doc/image_10.png)
     * Select “Quick Start”
@@ -121,10 +120,9 @@ The rest of the instructions for deploying the solution in a step-by-step manner
 
 ## Cleaning Up
 
-When you've finished with this solution, make sure that you delete all unwanted AWS resources. AWS CloudFormation can be used to automatically delete all standard resources that have been created by the solution and notebook. Go to the AWS CloudFormation Console, and delete the Medical_Text_Analysis stack.
+When you've finished with this solution, make sure that you delete all unwanted AWS resources. AWS CloudFormation can be used to automatically delete all standard resources that have been created by the solution and notebook. From the ECS Clusters, manually de-deploy the deployed containers by clicking the running tasks and selecting `Stop`. Next, Go to the AWS CloudFormation Console, and delete the `Medical_Text_Analysis` stack. Note that if you try to delete the stack prior to stopping the ECS cluster will **not** be deleted.
 
-Caution: You need to still delete the resources manually created. From the AWS SageMaker Console, you can delete the SageMaker Studio domain you created. From the ECS Clusters, you can manually de-deploy the deployed containers.
-
+**Caution**: You need to still delete other resources manually created. From the AWS SageMaker Console, you can [delete the SageMaker Studio domain you created](https://docs.aws.amazon.com/sagemaker/latest/dg/gs-studio-delete-domain.html). From the AWS ECR Console, you can manually delete the registered images.
 
 ## Useful Resources
 
