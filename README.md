@@ -1,4 +1,4 @@
-# Deriving Relevant Sentences for Patient Summaries in Medical Transcriptions Using BERT
+# Create a Medical Sentence Matching Application for Medical Transcriptions Using BERT
 
 
 ## Introduction
@@ -80,7 +80,7 @@ To run this workshop, you will need to first deploy the CloudFormation Template.
 ## Steps for opening SageMaker Studio
 
 * Once the cloudformation template has finished deploying all of the resources, open SageMaker from the main [AWS console](https://console.aws.amazon.com/) 
-* We will be using SageMaker Studio for this workshop. Here’s the [list of regions](https://docs.aws.amazon.com/sagemaker/latest/dg/regions-quotas.html) that SageMaker Studio is available in.
+* We will be using SageMaker Studio for this workshop. Here’s the [list of regions](https://docs.aws.amazon.com/sagemaker/latest/dg/regions-quotas.html) that SageMaker Studio is available in. Note that to later delete a SageMaker Studio domain, You must have admin permissions.
 * Go to SageMaker Studio by selecting the tab on the side bar
     * ![Image](doc/image_8.png)
 * If this is your first time using the SageMaker Studio console, you will need to first set it up. 
@@ -120,18 +120,28 @@ The rest of the instructions for deploying the solution in a step-by-step manner
 
 ## Cleaning Up
 
-When you've finished with this solution, make sure that you delete all unwanted AWS resources. 
+# Cleanup
+
+# Cleanup
+
+When you've finished with this solution, make sure that you delete all unneeded AWS resources. This solution used a combination of automated deployed resources (using CloudFormation) along with manually deployed resources that you created. Note that if you try to delete the stack prior deleting the manually created resources, those specific resources (and dependent resources) will **not** be deleted.
 
 1. From the ECS Clusters, manually de-deploy the deployed containers by clicking the running tasks and selecting `Stop`.
 
-2. From the ECS Task Definition section; de-register the task definitions you created.
+2. From the ECS Task Definition section; de-register the task definitions you created by clicking on the name of the task, checking the checkbox, and in the `Actions` button, click `Deregister`
 
-3. From the AWS ECR Console, you can manually delete the registered images.
+3. From the AWS ECR Console,manually delete the registered images by selecting each one and clicking `Delete`
 
-4. From the AWS SageMaker Console,  [delete the SageMaker Studio user and domain you created](https://docs.aws.amazon.com/sagemaker/latest/dg/gs-studio-delete-domain.html).
+4. From the AWS SageMaker Console,  [delete the SageMaker Studio user and domain you created](https://docs.aws.amazon.com/sagemaker/latest/dg/gs-studio-delete-domain.html). You will need to delete all associated Apps, the User, and finally the Domain.
+ 
+**Note**: if you receive an error  `ResourceInUse The ID or Name specified is already in use` when deleting the User or Domain, you can still continue to the next step to delete the resources and the CloudFormation template. 
+         
 
-5. Finally, go to the AWS CloudFormation Console, and delete the `Medical_Text_Analysis` stack. Note that if you try to delete the stack prior deleting the manually created resources, those specific resource will **not** be deleted.
+5. Navigate to the [EFS console](https://console.aws.amazon.com/efs) and delete the file system that is created by SageMaker Studio.  You can see which EFS file system to delete by clicking on the File system id (e.g fs-38643jda) and clicking Tag; the file system will show which SageMaker Studio domain is associated with it. 
 
+6. Navigate to the [VPC console](https://console.aws.amazon.com/vpc) and manually delete the VPC we used for SageMaker Studio, the VPC will have a Name of `sentence_relevance_VPC`.Click on the VPC ID , Actions and Delete VPC Then delete the VPC. Note that we are manually deleting the VPC to avoid any possible roleback errors when deleting the stack.
+
+5. Finally, go to the AWS CloudFormation Console, and delete the `Medical_Text_Analysis` stack. 
 
 ## Useful Resources
 
