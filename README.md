@@ -118,11 +118,7 @@ To run this workshop, you will need to first deploy the CloudFormation Template.
 
 The rest of the instructions for deploying the solution in a step-by-step manner are in the notebook `nlp_bert_medical_workshop.ipynb.` Open up that notebook and get to work!
 
-## Cleaning Up
-
-# Cleanup
-
-# Cleanup
+## Cleanup
 
 When you've finished with this solution, make sure that you delete all unneeded AWS resources. This solution used a combination of automated deployed resources (using CloudFormation) along with manually deployed resources that you created. Note that if you try to delete the stack prior deleting the manually created resources, those specific resources (and dependent resources) will **not** be deleted.
 
