@@ -122,6 +122,8 @@ The rest of the instructions for deploying the solution in a step-by-step manner
 
 # Cleanup
 
+# Cleanup
+
 When you've finished with this solution, make sure that you delete all unneeded AWS resources. This solution used a combination of automated deployed resources (using CloudFormation) along with manually deployed resources that you created. Note that if you try to delete the stack prior deleting the manually created resources, those specific resources (and dependent resources) will **not** be deleted.
 
 1. From the ECS Clusters, manually de-deploy the deployed containers by clicking the running tasks and selecting `Stop`.
@@ -135,9 +137,9 @@ When you've finished with this solution, make sure that you delete all unneeded 
 **Note**: if you receive an error  `ResourceInUse The ID or Name specified is already in use` when deleting the User or Domain, you can still continue to the next step to delete the resources and the CloudFormation template. 
          
 
-5. Navigate to the EFS console (https://console.aws.amazon.com/efs) and delete the file system that is created by SageMaker Studio.  You can see which EFS file system to delete by clicking on the File system id (e.g fs-38643jda) and clicking Tag; the file system will show which SageMaker Studio domain is associated with it. 
+5. Navigate to the [EFS console](https://console.aws.amazon.com/efs) and delete the file system that is created by SageMaker Studio.  You can see which EFS file system to delete by clicking on the File system id (e.g fs-38643jda) and clicking Tag; the file system will show which SageMaker Studio domain is associated with it. 
 
-6. Navigate to the VPC console (https://console.aws.amazon.com/vpc) and manually delete the VPC we used for SageMaker Studio, the VPC will have a Name of `sentence_relevance_VPC`.Click on the VPC ID , Actions and Delete VPC Then delete the VPC. Note that we are manually deleting the VPC to avoid any possible roleback errors when deleting the stack.
+6. Navigate to the [VPC console](https://console.aws.amazon.com/vpc) and manually delete the VPC we used for SageMaker Studio, the VPC will have a Name of `sentence_relevance_VPC`.Click on the VPC ID , Actions and Delete VPC Then delete the VPC. Note that we are manually deleting the VPC to avoid any possible roleback errors when deleting the stack.
 
 5. Finally, go to the AWS CloudFormation Console, and delete the `Medical_Text_Analysis` stack. 
 
